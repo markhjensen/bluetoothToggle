@@ -13,3 +13,5 @@ Register-ScheduledTask -Action $action -RunLevel Highest -TaskPath "MyTasks" -Ta
 $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/C C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe  C:\Users\%USERNAME%\Scripts\bluetoothToggle.ps1 -BluetoothStatus On'
 Register-ScheduledTask -Action $action -RunLevel Highest -TaskPath "MyTasks" -TaskName "toggleBluetooth ON" -Description "Starts powershell script to enable bluetooth in WinRT"
 ```
+Remeber to set triggers. I didnt opt to add trigger to this script as New-ScheduledTaskAction does not support the triggers i use (on lock/unlock) for that you need:
+https://stackoverflow.com/questions/53704188/syntax-for-execute-on-workstation-unlock
