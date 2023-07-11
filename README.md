@@ -6,10 +6,10 @@ A script to turn ON/OFF bluetooth in WinRT env.
 
 
 
-´´´
+```
 $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/C C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe  C:\Users\%USERNAME%\Scripts\bluetoothToggle.ps1 -BluetoothStatus Off'
 Register-ScheduledTask -Action $action -RunLevel Highest -TaskPath "MyTasks" -TaskName "toggleBluetooth OFF" -Description "Starts powershell script to disable bluetooth in WinRT"
 
 $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/C C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe  C:\Users\%USERNAME%\Scripts\bluetoothToggle.ps1 -BluetoothStatus On'
 Register-ScheduledTask -Action $action -RunLevel Highest -TaskPath "MyTasks" -TaskName "toggleBluetooth ON" -Description "Starts powershell script to enable bluetooth in WinRT"
-´´´
+```
